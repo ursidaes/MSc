@@ -1,0 +1,73 @@
+How is sound stored on a pc?
+
+
+
+Sound is picked up by the microphone  and converted into an electrical signal. The sound is then passed to the microphone preamplifier. 
+
+A preamplifier is an electronic amplifier that converts a weak electric signal into an output strong enough for further processing, or for sending on to an output device. An ideal preamp will have linear gain throughout the operating range and have a high input impedance. This means that there is only need for a small input current to sense a signal. They also tend to have a low output impedance, which means that the current when drawn from the output has only a small effect on the output voltage. It’s main usage is to boost the signal strength without significantly decreasing the signal to noise ratio.
+
+
+Line level - the specified strength of an audio signal used to transmit analog sound between audio components. There are equivalent values for Microphone level and instrument level.
+
+A pickup is a transducer that captures or senses mechanical vibrations produced by musical instruments. 
+
+Friis’s formula is used to calculate the SNR of a multistage amplifier. 
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.quora.com/How-is-sound-stored-in-a-computer#:~:text=The%20data%20itself%20is%20stored%20as%200s%20and%201s%20on,storage%20medium%20being%20used%20is.&text=For%20the%20sound%20to%20actually,using%20an%20A%2FD%20converter.
+
+
+
+
+In any case, once the sound has been picked up, the microphone uses an ADC to convert the analogue sound into digital so that it can be stored correctly in the PC. Most commonly, theft are stored as uncompressed, lossless .wav files, or compressed lossy mp3 files. - That is to say unnecessary information is discarded. In order to retrieve the data and reconstruct the sound, a media player will need the correct decoders (codecs).
+You can do this in linux to view raw audio information. For 9 seconds of uncompressed audio in this case (.wav) the file size is roughly 3Mb. As an aside, it is clear why music isn’t stored in this form.
+
+
+
+For use in a python script - https://pypi.org/project/audiotools/#history
+
+https://github.com/tyiannak/pyAudioAnalysis
+
+
+pyAudioAnalysis is a Python library covering a wide range of audio analysis tasks. Through pyAudioAnalysis you can:
+Extract audio features and representations (e.g. mfccs, spectrogram, chromagram)
+Classify unknown sounds
+Train, parameter tune and evaluate classifiers of audio segments
+Detect audio events and exclude silence periods from long recordings
+Perform supervised segmentation (joint segmentation - classification)
+Perform unsupervised segmentation (e.g. speaker diarization)
+Extract audio thumbnails
+Train and use audio regression models (example application: emotion recognition)
+Apply dimensionality reduction to visualize audio data and content similarities
+https://medium.com/behavioral-signals-ai/basic-audio-handling-d4cc9c70d64d 
+
+
+
+
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0144610
+
+
+Library has many implementations, however the most interesting and relevant for us is music segmentation.
+
+Can determine the beat and tempo of a music piece.
+
+Audio classification through ML → could be extremely useful if/when we are learning about multiple instruments (or multiple tunings?)
+
+Audio segmentation - splitting uninterrupted audio signal into segments of homogeneous content → can be used with prior knowledge. As such this could easily be used to define different notes if trained correctly with enough data.	This will be really useful to look at.
+
+May need to read about hidden markov models (chains)
+
+Semi supervised silence removal - could be used to get rid of leading and trailing whitespace in an audio clip - this would mean calculations for things like beat should be more accurate.
+
+I think it’s fair to say this can’t do everything that i want, but there are a lot of features that I should look at to better understand the processing of sound. 
+

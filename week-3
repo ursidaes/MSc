@@ -1,0 +1,16 @@
+What has happened this week?
+
+Well, the initial difficulties presented with the installation of pyAudioAnalysis were eventually overcome, and I was able to install it in its entirety and begin to experiment with its features. It quickly became clear that this piece of software is actually quite advanced, and goes beyond the scope of what is required for this project. In addition, a lot of the features are geared towards machine learning, and how this approach can be used to categorise sound into different groups, be it musical genre, artist, or indeed different types of audio such as speech or music.
+
+It also has the ability to make use of audio segmentation
+
+Audio segmentation - splitting uninterrupted audio signals into segments of homogeneous content → can be used with prior knowledge.
+
+Now at a glance, this seems like a useful feature that could potentially be used for isolating individual notes, and I believe this to be the case. With that being said, i think that the amount of work one would have to do to be able to achieve the desired effect is a project in itself. As such i have elected to go down a different route and use different libraries and papers to study how one may most effectively achieve the desired result. That is not to say that this has been a fool's errand, and this part of the library is definitely worth referring back to at a later date for inspiration and understanding.
+
+This week I have installed ffmpeg and pydub as a further method to examine the structure of sound and have immediately met with more success than previously. I think these are fundamentally easier to use, and provide a good level of functionality for what I require.
+
+Thus far, I have been able to convert a sound from mp3 to uncompressed wav format, change it from stereo system to mono and graph the values of the sound. From here I have been able to perform a Fourier transform on this data to get the frequencies of the sound. 
+
+Currently I think that there is a mistake in one, or both of the domains, due to the frequency domain in parts being of the order 10^6. This is clearly ridiculous, since we typically hear things in the low end of 10^4. As such I will be working on a fix for this. 
+
